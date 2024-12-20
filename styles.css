@@ -33,9 +33,9 @@ nav{
 }
 
 .background-container{
-	background-image: url("background-main.jpg");
-	background-size: cover;
-	background-position: -3vw center;
+	background-image: url("background-main-2.jpg");
+	background-size: 99%;
+	
 	background-repeat: no-repeat;
 	width: 100vw;
 	height: 100vh;
