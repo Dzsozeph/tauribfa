@@ -106,7 +106,7 @@ document.querySelector('.btn-close').addEventListener('click', function(event) {
                 const minutes = String(Math.floor((remainingAfterMonths % 3600) / 60)).padStart(2, '0');
                 const seconds = String(remainingAfterMonths % 60).padStart(2, '0');
 
-                display.textContent = `${years} év ${months} hónap ${days} nap ${hours}:${minutes}:${seconds}`;
+                display.textContent = `${years} Years ${months} Months ${days} Days ${hours}:${minutes}:${seconds}`;
 
                 if (timer > 0) {
                     timer--;
@@ -118,7 +118,7 @@ document.querySelector('.btn-close').addEventListener('click', function(event) {
         }
 
         // Például egy 1 éves visszaszámlálás:
-        startCountdown(295363082); // 1 év másodpercekben
+        startCountdown(295463082); // 1 év másodpercekben
 	</script>
 	</body>
 </html>
