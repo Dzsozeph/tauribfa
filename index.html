@@ -109,7 +109,7 @@ document.querySelector('.btn-close').addEventListener('click', function(event) {
                 const minutes = String(Math.floor((remainingAfterWeeks % 3600) / 60)).padStart(2, '0');
                 const seconds = String(remainingAfterWeeks % 60).padStart(2, '0');
 
-                display.textContent = `${years} év ${months} hónap ${weeks} hét ${days} nap ${hours}:${minutes}:${seconds}`;
+                display.textContent = `${years} Year ${months} Month ${weeks} Week ${days} Day ${hours}:${minutes}:${seconds}`;
 
                 if (timer > 0) {
                     timer--;
