@@ -27,7 +27,7 @@
 		<div class="background-container"></div>
 			 <div class="countdown">
         <div class="noto-serif-font">PTR Test realm countdown</div>
-        <div class="time" id="time">0 Year 0 Month 0 day 00:00:00</div>
+        <div class="time" id="time">0 Year 0 Month 0 Week 0 day 00:00:00</div>
     </div>
 		
 		
@@ -90,7 +90,7 @@ document.querySelector('.btn-close').addEventListener('click', function(event) {
 });
 
 			
- function startCountdown(duration) {
+        function startCountdown(duration) {
             const display = document.getElementById('time');
             let timer = duration;
 
@@ -101,12 +101,15 @@ document.querySelector('.btn-close').addEventListener('click', function(event) {
                 const months = Math.floor(remainingAfterYears / (30 * 24 * 3600));
                 const remainingAfterMonths = remainingAfterYears % (30 * 24 * 3600);
 
-                const days = Math.floor(remainingAfterMonths / (24 * 3600));
-                const hours = String(Math.floor((remainingAfterMonths % (24 * 3600)) / 3600)).padStart(2, '0');
-                const minutes = String(Math.floor((remainingAfterMonths % 3600) / 60)).padStart(2, '0');
-                const seconds = String(remainingAfterMonths % 60).padStart(2, '0');
+                const weeks = Math.floor(remainingAfterMonths / (7 * 24 * 3600));
+                const remainingAfterWeeks = remainingAfterMonths % (7 * 24 * 3600);
 
-                display.textContent = `${years} Years ${months} Months ${days} Days ${hours}:${minutes}:${seconds}`;
+                const days = Math.floor(remainingAfterWeeks / (24 * 3600));
+                const hours = String(Math.floor((remainingAfterWeeks % (24 * 3600)) / 3600)).padStart(2, '0');
+                const minutes = String(Math.floor((remainingAfterWeeks % 3600) / 60)).padStart(2, '0');
+                const seconds = String(remainingAfterWeeks % 60).padStart(2, '0');
+
+                display.textContent = `${years} év ${months} hónap ${weeks} hét ${days} nap ${hours}:${minutes}:${seconds}`;
 
                 if (timer > 0) {
                     timer--;
@@ -116,7 +119,6 @@ document.querySelector('.btn-close').addEventListener('click', function(event) {
                 }
             }, 1000);
         }
-
         // Például egy 1 éves visszaszámlálás:
         startCountdown(295463082); // 1 év másodpercekben
 	</script>
