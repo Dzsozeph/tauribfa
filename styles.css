@@ -1,0 +1,268 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*FONTS *FONTS *FONTS *FONTS *FONTS*FONTS*FONTS*FONTS*/
+.noto-serif-font {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+body, html {
+	position: relative;
+	width: 100vw;
+    height: 100vh;
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+	display: flex;
+}
+
+
+nav{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	opacity: 0.4;
+	clip-path: polygon(0% 0%, 35% 11%, 65% 11%, 100% 0%);
+}
+
+.background-container{
+	background-image: url("background-main.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+.logo-container {
+    position: absolute;
+    top: 15vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    width: 27vw;
+    height: 25vh;
+    background-image: url("wowlogo2.png");
+    background-position: -5px;
+    background-size: cover;
+}
+
+.logo:hover {
+    animation: earthquake 0.5s ease-in-out;
+}
+
+.logo-tauri{
+	position: absolute;
+	width: 160px;
+	height: 60px;
+	background-image: url(taurilogo.png);
+	background-size: cover;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	top: 62%;
+
+}
+
+@keyframes earthquake {
+    0% { transform: translate(0); }
+    10% { transform: translate(-20px, 0); }
+    20% { transform: translate(5px, 0); }
+    30% { transform: translate(-20px, 0); }
+    40% { transform: translate(5px, 0); }
+    50% { transform: translate(-20px, 0); }
+    60% { transform: translate(5px, 0); }
+    70% { transform: translate(-20px, 0); }
+    80% { transform: translate(5px, 0); }
+    90% { transform: translate(-20px, 0); }
+    100% { transform: translate(0); }
+}
+
+.welcome-textbox{
+	max-width: 18vw;
+	position: absolute;
+	color:white;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 45vh;
+	font-size: 22px;
+	text-align: center;
+	text-shadow: 0 0 12px black;
+}
+.welcome-textbox p {
+font-size: 15px; 
+font-weight: 300;
+max-width: 8vw; 
+margin: 0 auto;
+text-shadow: 0 0 30px black;
+}
+
+
+.btn-join{
+	position: absolute;
+	font-size: 18px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	width: 10vw;
+	height: 6vh;
+	color: white;
+	background-color: rgba(151,47,49,1.00);
+    border-radius: 5px;
+	cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	top: 75%;
+	border: none;
+	z-index: 1;
+
+
+}
+
+
+.btn-join:hover{
+box-shadow: 0 0 300px black;
+text-shadow: 0px 0px 20px white;
+border: 10px yellow;
+
+
+}
+
+.message-form-container {
+	display: none;
+    position: absolute; /* Szülőelem pozicionálása relatív */
+    width: 95vw; /* Kívánt szélesség */
+    height: 88vh; /* Kívánt magasság */
+	z-index: 3;
+	margin: auto;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	transform: translate(-50%, -50%); /* Középpontra igazítás */
+	left: 50vw;
+	background-image: url("header.jpg");
+	background-size: cover;
+	margin-top: -50vh;
+	filter: drop-shadow(0 0 90px black); 
+	
+
+}
+
+.msg-form-header {
+    position: absolute; /* Abszolút pozicionálás a háttérhez */
+    top: 0; /* Felül */
+    left: 0; 
+    width: 100%; /* Teljes szélesség */
+    height: 16vh; /* Kívánt magasság */
+    background-size: cover;
+    opacity: 1;
+    z-index: 1; /* Háttér z-index */
+}
+	
+.msg-form-header h1{
+	color:white;
+	font-size: 40px;
+	font-weight: 500;
+	margin-top: 33vh;
+	z-index: 2;
+	text-shadow: 0 0 10px black;
+	
+	}
+
+
+.text {
+    position: relative; /* Abszolút pozicionálás a szöveghez és formhoz */
+    top: 30%; /* Állítsd be, hogy a form alatt legyen */
+    left: 50%; /* Középre */
+    transform: translate(-50%, -50%); /* Középre igazítás */
+    z-index: 2; /* Z-index a szöveghez és formhoz */
+	color:black;
+	font-weight: 600;
+	font-size: 12px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	
+}
+	
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+	position: relative;
+    margin-bottom: 1vh;
+	
+}
+
+
+input, textarea {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100%;
+	border: 2px solid black;
+	resize:inherit;
+	box-shadow: 0 0 300px white;
+	
+}
+
+label{
+	color:white;
+	
+}
+
+.btn-send{
+	background-color: burlywood;
+	width: 16vh;
+	height: 4vh;
+	box-shadow: 0 0 30px grey;
+	background: rgb(0,16,3);
+    background: linear-gradient(126deg, rgba(0,16,3,1) 0%, rgba(23,58,62,1) 96%);
+	border-radius: 3px;
+	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+	color:white;
+	cursor: pointer;
+	top: 33vh;
+	
+}
+.btn-send:hover{
+     background: rgb(0,16,3);
+     background: linear-gradient(126deg, rgba(0,16,3,1) 0%, rgba(94,110,23,1) 96%);
+	transform: scale(1.1); /* Ikonok nagyítása hover esetén */
+	transition: transform 0.3s ease-in-out; /* Simítás és időzítés beállítása */
+}
+
+.btn-close {
+    position: absolute;
+    right: 10px; /* Jobbról */
+    background: none;
+    border: none;
+    font-size: 20px; /* Méret */
+    cursor: pointer;
+	background-color: white;
+	border-radius: 30%;
+	margin-top: 5vh;
+}
+
+.countdown {
+	       
+            text-align: center;
+            font-size: 23px;
+	        color: white;
+	        position: relative;
+			margin-top: -6.5vh;
+	        text-shadow: 0 0 10px white;
+	        background-color: rgba(0,0,0,0.61);
+ 
+        }
+
+ .time {
+            font-weight: bold;
+            color: rgba(30,223,40,1.00);
+	    
+	       
+        }

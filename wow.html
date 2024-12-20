@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Hind+Mysuru:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Prata&display=swap" rel="stylesheet">
+<title>Tauri release: World of Warcraft - Battle for Azeroth - </title>
+</head>
+<nav>
+	<div id="nav">
+
+		
+	</div>
+</nav>
+	
+<body>
+	<section id="welcome">
+			<div class="logo-tauri"></div>
+		<div class="welcome-textbox">
+			<h1 class="noto-serif-font">World of Warcraft®: Battle for Azeroth</h1> 
+	
+			<p class="noto-serif-font">REGISTRATION JUST LAUNCHED ON </p>
+		</div>
+		
+		<div class="background-container"></div>
+			 <div class="countdown">
+        <div class="noto-serif-font">PTR Test realm countdown</div>
+        <div class="time" id="time">0 Year 0 Month 0 day 00:00:00</div>
+    </div>
+		
+		
+		
+	<button id="btn-join" class="btn-join">Join now</button>
+		<div class="message">
+<div class="message-form-container">
+	
+	
+    <div class="msg-form-header">
+	<button class="btn-close">✖</button> <!-- Bezáró gomb -->
+	<h1 class="noto-serif-font">JOIN NOW</h1> <!-- Középre igazított szöveg -->
+	
+	</div> <!-- Background -->
+	
+	
+    <div class="text">
+
+        <form action="/send-message" method="post">
+            <label for="name">Account name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            
+            
+            <button type="submit" class="btn-send">Register</button>
+        </form>
+    
+		
+		</div>
+	</div>
+	<div class="logo-container">
+	<div class="logo"></div>
+	</div>
+</div>
+	
+		</section>
+		<script>
+
+	 document.querySelector('.btn-join').addEventListener('click', function(event) {
+        event.preventDefault(); // Megakadályozza az alapértelmezett hivatkozás viselkedést
+        const formContainer = document.querySelector('.message-form-container');
+        
+        // Ellenőrzi, hogy látható-e az elem
+        if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+            formContainer.style.display = 'flex'; // Megnyitja az űrlapot
+        } else {
+            formContainer.style.display = 'none'; // Bezárja az űrlapot, ha már meg van nyitva
+        }
+    });
+	
+
+
+document.querySelector('.btn-close').addEventListener('click', function(event) {
+    event.preventDefault(); // Megakadályozza az alapértelmezett viselkedést
+    const formContainer = document.querySelector('.message-form-container');
+    formContainer.style.display = 'none'; // Bezárja az űrlapot
+});
+
+			
+ function startCountdown(duration) {
+            const display = document.getElementById('time');
+            let timer = duration;
+
+            const interval = setInterval(() => {
+                const years = Math.floor(timer / (365 * 24 * 3600));
+                const remainingAfterYears = timer % (365 * 24 * 3600);
+
+                const months = Math.floor(remainingAfterYears / (30 * 24 * 3600));
+                const remainingAfterMonths = remainingAfterYears % (30 * 24 * 3600);
+
+                const days = Math.floor(remainingAfterMonths / (24 * 3600));
+                const hours = String(Math.floor((remainingAfterMonths % (24 * 3600)) / 3600)).padStart(2, '0');
+                const minutes = String(Math.floor((remainingAfterMonths % 3600) / 60)).padStart(2, '0');
+                const seconds = String(remainingAfterMonths % 60).padStart(2, '0');
+
+                display.textContent = `${years} év ${months} hónap ${days} nap ${hours}:${minutes}:${seconds}`;
+
+                if (timer > 0) {
+                    timer--;
+                } else {
+                    clearInterval(interval);
+                    display.textContent = "Lejárt az idő!";
+                }
+            }, 1000);
+        }
+
+        // Például egy 1 éves visszaszámlálás:
+        startCountdown(295363082); // 1 év másodpercekben
+	</script>
+	</body>
+</html>
